@@ -1,4 +1,4 @@
-a = int(input('Enter a:'))
+a = float(input('Enter a:'))
 print(a)
 print(type(a))
 
@@ -7,21 +7,21 @@ print(a)
 print(type(a))
 
 s = a+b
-print(s)
+print(f'Sum = {s}')
 print(type(s))
 
 n = a+b
-print(n)
+print(f'Sub = {n}')
 print(type(n))
 
 d = a/b
-print(d)
+print(f'Div = {d}')
 print(type(d))
 
 m = a/b
-print(m)
+print(f'Mul = {m}')
 print(type(m))
 
 mo = a%b
-print(m)
+print(f'Mod = {mo}')
 print(type(m))
