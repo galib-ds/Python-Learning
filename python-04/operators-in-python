@@ -1,0 +1,7 @@
+# 1.Arithmetic Operators ( +, -, *, /, %, **, // )
+# 2.Comparison Operators ( ==, !=, <, >, <=, >= )
+# 3.Assignment operators ( =, +=, -=, *=, /=, %=, **=, //= )
+# 4.logical Operators ( and, or, not )
+# 5.Identity Operators ( is, is not )
+# 6.Membership Operators ( in, not in )
+# 7.Bitwise Operators ( &, |, ^, ~, <<, >> )
