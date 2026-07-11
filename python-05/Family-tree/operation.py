@@ -9,8 +9,8 @@ print("There are",len(data.members),"members in your family")                # c
 r1 = input("Do you want to add or remove members to the family? (y/n) : ")
 
 if( r1 == 'y'):
-    r2 = input("what do you want to do add or remove?? (a/r) : ")
-    if( r2 == 'a'):
+    r2 = input("what do you want to do add or remove?? (a/r) : ")           # Add Remove logic
+    if( r2 == 'a'):                                                         # Add logic
         print("##########################")
         new_member = input("Enter New member : ")
         data.members.append(new_member)
@@ -19,14 +19,14 @@ if( r1 == 'y'):
         print("##########################")  
         print("There are",len(data.members),"members in your family")   
 
-    else:
+    else:                                                                   # Remove logic
         print("###########>>> WARNING <<<##############")
         member_to_remove = input("Enter the member's name : ")
-        if member_to_remove in data.members:
+        if member_to_remove in data.members:                                # searching the list for the members name we inputed
             print("###########>>> WARNING <<<##############")
             print(member_to_remove)
             r3 = input("The member you want to remove!!\nAre you sure? (y/n) : ")
-            if( r3 == 'y'):
+            if( r3 == 'y'):                                                 # Remove by members name
                 data.members.remove(member_to_remove)
                 print("#######>>> Family Members <<<#########")
                 for i in data.members:print(i)

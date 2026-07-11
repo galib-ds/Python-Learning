@@ -1,0 +1,7 @@
+Removal uses Python index numbers, which start at 0.
+
+Invalid text for the index, or an index outside the list, will crash the program.
+
+Typing anything besides a in the second prompt triggers removal, including accidental input.
+
+Names aren’t saved permanently yet.
