@@ -14,15 +14,14 @@ if( r1 == 'y'):
     if( r2 == 'a'):                                                         # Add logic
         print("##########################")
 
-        while True:                                                         # use a while loop for multiple input
-            new_member = input("Enter New member : ")
+        add_more = 'y'
+
+        while add_more == 'y':
+            new_member = input("Enter new members Name : ")
             data.members.append(new_member)
-            r = input("Do you want to add more? (y/n) : ")
-            if( r == 'y'):
-                continue
-            else:
-                break
-        
+
+            add_more = input("Do you want to add another member? (y/n) : ")
+       
         print("#######>>> Family Members <<<#########")
         
         for i in data.members:print(i)                                      # for loop to print the new members
@@ -32,19 +31,25 @@ if( r1 == 'y'):
 
     else:                                                                   # Remove logic
         print("###########>>> WARNING <<<##############")
-        member_to_remove = input("Enter the member's name : ")
-        if member_to_remove in data.members:                                # searching the list for the members name we inputed
-            print("###########>>> WARNING <<<##############")
-            print(member_to_remove)
-            r3 = input("The member you want to remove!!\nAre you sure? (y/n) : ")
-            if( r3 == 'y'):                                                 # Remove by members name
-                data.members.remove(member_to_remove)
-                print("#######>>> Family Members <<<#########")
-                for i in data.members:print(i)
-                print("##########################")
-                print("There are",len(data.members),"members in your family") 
-        else:
-            print("That member is not in the family list.")
+        
+        remove_more = 'y'
+
+        while remove_more == 'y':
+            members_to_remove = input("Enter the members name you want to remove : ")
+            if(members_to_remove in data.members):
+                r3 = input("Do you want to remove {} (y/n) : ".format(members_to_remove))
+                if r3 == 'y':
+                    data.members.remove(members_to_remove)
+                else:
+                    print("{} is not removed".format(members_to_remove))                   
+            else:
+                print("The member is not in the family list!!")
+            remove_more = input("Do you want to remove another member? (y/n) : ")
+
+        print("#######>>> Family Members <<<#########")
+        for i in data.members:print(i)
+        print("##########################")
+        print("There are",len(data.members),"members in your family")
 
 else:
     print("#######>>> (^ = ^)<<<#########")
