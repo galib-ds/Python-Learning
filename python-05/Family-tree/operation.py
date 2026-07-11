@@ -1,4 +1,13 @@
-import data                                                      # connecting data.py to operation.py
+import json
+import data   
+FILE_NAME = "family_member.json"
+
+try: 
+    with open(FILE_NAME,"r") as file:
+        data.members = json.load(file)
+except FileNotFoundError:
+    print("No saved family list found. Using the default list.")
+                                               # connecting data.py to operation.py
 print("Current members of the family are :")
 print("#######>>> Family Members <<<#########")
 for i in data.members:print(i)                                   # for loop iterates through the members list and prints them line by line
@@ -72,3 +81,6 @@ if r1 == 'y':
 else:
     print("#######>>> (^ = ^)<<<#########")                                                  # if the user choses nothing to do
     print("No members is Added or Removed")
+
+with open(FILE_NAME,"w") as file:
+    json.dump(data.members, file)
