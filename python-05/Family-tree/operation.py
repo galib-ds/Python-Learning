@@ -6,18 +6,29 @@ for i in data.members:print(i)
 print("##########################")                                          # for loop iterates through the members list and prints them line by line
 print("There are",len(data.members),"members in your family")                # counting the number of members
 
-r1 = input("Do you want to add or remove members to the family? (y/n) : ")
+r1 = input("Do you want to add or remove members to the family? (y/n) : ")   # first prompt to ask for add and remove
 
 if( r1 == 'y'):
-    r2 = input("what do you want to do add or remove?? (a/r) : ")           # Add Remove logic
+    r2 = input("what do you want to do add or remove?? (a/r) : ")           # ask what to do add or remove 
+
     if( r2 == 'a'):                                                         # Add logic
         print("##########################")
-        new_member = input("Enter New member : ")
-        data.members.append(new_member)
+
+        while True:                                                         # use a while loop for multiple input
+            new_member = input("Enter New member : ")
+            data.members.append(new_member)
+            r = input("Do you want to add more? (y/n) : ")
+            if( r == 'y'):
+                continue
+            else:
+                break
+        
         print("#######>>> Family Members <<<#########")
-        for i in data.members:print(i)
+        
+        for i in data.members:print(i)                                      # for loop to print the new members
         print("##########################")  
-        print("There are",len(data.members),"members in your family")   
+
+        print("There are",len(data.members),"members in your family")       # len() for counting the new members
 
     else:                                                                   # Remove logic
         print("###########>>> WARNING <<<##############")
@@ -34,6 +45,7 @@ if( r1 == 'y'):
                 print("There are",len(data.members),"members in your family") 
         else:
             print("That member is not in the family list.")
+
 else:
     print("#######>>> (^ = ^)<<<#########")
-    print("No members is added or removed")
+    print("No members is Added or Removed")
